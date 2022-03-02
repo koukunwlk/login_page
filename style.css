@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+:root {
+  --text-base: #afb6c2;
+  --text-title: #d4ccb6;
+  --background: #191816;
+  --form-background: #24221f;
+  --primary-color: #ffc632;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'sans-serif';
+    color: var(--text-title);
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    height: 100%;
+    flex: 0.9;
+}
+
+.login-container {
+    display: flex;
+    background-color: var(--background);
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.img-container {
+    flex: 1;
+}
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.body-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 512px;
+    background-color: var(--form-background);
+    padding: 64px;
+}
+button {
+    padding: 8px;
+    background-color: var(--primary-color);
+    color: black;
+    font-weight: bold;
+}
+#email {
+    background: url("./images/mail.svg") no-repeat 8px;
+    padding-left: 30px;
+}
+
+#password {
+    background: url("./images/lock.svg") no-repeat 8px;
+    padding-left: 30px;
+}
+input {
+    background-color: transparent;
+    border: 1px solid var(--text-base);
+    outline: none;
+    padding: 8px;
+}
+.login-icon{
+    background: url("./images/log-in.svg")no-repeat;
+    width: 30px;
+    height: 30px;
+}
+h2::before{
+    content: url("./images/log-in.svg");
+    display: inline-block;
+    margin-right: 8px;
+    margin-top: 8px;
+}
