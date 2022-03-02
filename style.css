@@ -10,49 +10,77 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', 'sans-serif';
     color: var(--text-title);
+	box-sizing: border-box;
 }
+
 body {
     height: 100vh;
     display: flex;
     justify-content: center;
 }
+
 .container {
     display: flex;
     height: 100%;
-    flex: 0.9;
+    flex: 1;
+}
+
+.logo-container {
+	width: fit-content;
+    height: fit-content;
+    float: left;
+    align-self: flex-start;
+	margin-top: 3vh;
+	justify-self: flex-start;
 }
 
 .login-container {
     display: flex;
     background-color: var(--background);
+	flex-direction: column;
     flex: 1;
     justify-content: center;
     align-items: center;
+	height: 100%;
 }
+
 .img-container {
     flex: 1;
 }
+
 img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
+
 .body-form {
     display: flex;
     flex-direction: column;
-    max-width: 512px;
+	width: 60%;
+	height: 60%;
     background-color: var(--form-background);
-    padding: 64px;
+	border-radius: 4px;
+	justify-content: space-evenly;
+	padding: 8%;
 }
+
 button {
     padding: 8px;
     background-color: var(--primary-color);
     color: black;
     font-weight: bold;
 }
+
+.login-group {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	margin-top: 6px;
+}
+
 #email {
     background: url("./images/mail.svg") no-repeat 8px;
     padding-left: 30px;
@@ -62,20 +90,125 @@ button {
     background: url("./images/lock.svg") no-repeat 8px;
     padding-left: 30px;
 }
+
+.eye-pwd {
+	position: absolute;
+	right: 10px;
+	background: url("./images/eye.svg") no-repeat;
+	width: 20px;
+	height: 20px;
+	bottom: 8px;
+}
+
 input {
     background-color: transparent;
     border: 1px solid var(--text-base);
     outline: none;
     padding: 8px;
 }
-.login-icon{
-    background: url("./images/log-in.svg")no-repeat;
-    width: 30px;
-    height: 30px;
+
+h2 {
+	font-size: x-large;
 }
+
 h2::before{
     content: url("./images/log-in.svg");
     display: inline-block;
     margin-right: 8px;
     margin-top: 8px;
+}
+
+.pwd-group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 6px;
+}
+
+.forgot-pwd{
+	justify-self: flex-end;
+	color: var(--primary-color);
+}
+
+.register {
+	text-align: center;
+	color: var(--primary-color);
+}
+
+.register > a {
+	color: var(--primary-color);
+	font-weight: bold;
+}
+
+.chk input {
+    display: none;
+}
+
+.chk span {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: transparent;
+    border: 1px solid var(--text-base);
+}
+
+.chk input:checked + span {
+    background-color: var(--primary-color);
+}
+
+.chk-group {
+	display: flex;
+	gap: 3px;
+}
+
+.login-group:focus-within > input {
+	border: 1px solid var(--primary-color);
+}
+
+#email:focus-within {
+    background: url("./images/mail-focus.svg") no-repeat 8px;
+    padding-left: 30px;
+}
+
+#password:focus-within {
+    background: url("./images/lock-focus.svg") no-repeat 8px;
+    padding-left: 30px;
+}
+
+@media (max-width: 540px) {
+	
+	.img-container {
+		display: none;
+	}
+	.body-form {
+		width: 100%;
+		background-color: transparent;
+	}
+	.container {
+		flex: 1;
+	}
+	.logo-container {
+		align-self: center;
+		justify-self: center;
+	}
+}
+@media (max-width: 900px) {
+	.img-container {
+		display: none;
+	}
+	.logo-container {
+		align-self: center;
+		justify-self: center;
+	}
+	.login-container {
+		justify-content: flex-start;
+		align-self: center;
+	}
+	.body-form{
+		justify-content: flex-start;
+		margin-top: 15px;
+	}
+	.body-form {
+		background-color: transparent;
+	}
 }
